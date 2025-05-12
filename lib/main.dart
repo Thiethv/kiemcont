@@ -7,12 +7,14 @@ import 'package:container_inspection/utils/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'settings/config.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: 'https://ifpjhpzfqjlegdnnlmxj.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmcGpocHpmcWpsZWdkbm5sbXhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIwMDM1MDIsImV4cCI6MjA0NzU3OTUwMn0.4AakcvcBPBQ2JEE9nLBAygCe28R8CPT1LaVGfHEdwM0',
+    url: API_URL,
+    anonKey: API_KEY,
   );
   runApp(const MainApp());
 }

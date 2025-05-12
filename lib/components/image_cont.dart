@@ -28,7 +28,7 @@ class Avatar extends StatelessWidget {
   Future<int> getNextFileIndex(String prefix, String fileName) async {
     try {
       // Lấy danh sách tệp trong thư mục
-      final files = await supabase.storage.from('image_cont').list(
+      final files = await supabase.storage.from('image-cont').list(
         path: prefix,
       );
 
@@ -130,7 +130,7 @@ class Avatar extends StatelessWidget {
               }
               String contentType = 'image/jpeg';
 
-              await supabase.storage.from('image_cont').uploadBinary(
+              await supabase.storage.from('image-cont').uploadBinary(
                   imagePath,
                   // imageBytes,
                   compressedImage,
@@ -140,7 +140,7 @@ class Avatar extends StatelessWidget {
                   ),
                 );
                 String imageUrl =
-                    supabase.storage.from('image_cont').getPublicUrl(imagePath);
+                    supabase.storage.from('image-cont').getPublicUrl(imagePath);
 
                 onUpload(imageUrl);
 
